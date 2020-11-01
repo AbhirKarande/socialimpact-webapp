@@ -1,10 +1,21 @@
 import './App.css';
 import React from "react";
 import axios from "axios";
-import { useState } from 'react';
+import ReactDOM from 'react-dom'
+//import 'boostrap/dist/css/bootstrap.css'
 var query = "";
-const url = "https://newsapi.org/v2/everything?q="+query+"&apiKey=" + (process.env.REACT_APP_NEWSAPI_TOKEN);
+const url = "https://newsapi.org/v2/everything?q=US-Presidential-Election&apiKey=" + (process.env.REACT_APP_NEWSAPI_TOKEN);
 class App extends React.Component {
+  //constructor(props) {
+  //  super(props)
+  //  this.state = {
+  //    value: '',
+  //  }
+  //}
+  //handleChange(event) {
+   // this.setState({value: event.target.value})
+    //query = value;
+  //}
   state = {
     articles: [],
     isLoading: true,
@@ -36,26 +47,15 @@ class App extends React.Component {
   }
   render() {
     const { isLoading, articles } = this.state;
-    const [searchTerm, setSearchTerm] = React.useState("");
-    const handleChange = event => {
-      setSearchTerm(event.target.value);
-      setSearchTerm = query;
-    };
     return (
       <React.Fragment>
-        <input
-          type="text"
-          placeholder="Search"
-          value={searchTerm}
-          onChange={handleChange}
-        />
-        <h2>#Covid-19</h2>
+        <h2 class="page-header">The latest on the 2020 United Presidential Election</h2>
         <div>
           {!isLoading ? (
             articles.map(article => {
               const { date, title, url } = article;
               return (
-                <div key={title}>
+                <div class="posts" key={title}>
                   <p>{date}</p>
                   <p>{title}</p>
                   <p>{url}</p>
