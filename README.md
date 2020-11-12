@@ -1,3 +1,9 @@
+As of now I am just making use of the NewsAPI and fetching data on the latest information about the US presidential election.
+It seems kind of redundant since this can be done with a google search. The website is still in primitive stages so information is very sparse.
+Perhaps more graphic displays and a voter map turnout can be added later on.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
